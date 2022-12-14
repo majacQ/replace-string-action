@@ -29,7 +29,7 @@ The replaced string.
 ## Example usage
 
 ```yaml
-uses: frabert/replace-string-action@v1.2
+uses: frabert/replace-string-action@v2
 with:
   pattern: 'Hello, (\w+)!'
   string: 'Hello, world!'

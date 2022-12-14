@@ -1,3 +1,4 @@
+  <<<<<<< tests
 const core = require('@actions/core');
 
 try {
@@ -16,4 +17,19 @@ try {
   console.log(`flags: "${flags}"`);
 } catch (error) {
   core.setFailed(error.message);
+  =======
+const core = require('@actions/core');
+
+try {
+  const pattern = core.getInput('pattern');
+  const string = core.getInput('string');
+  const replaceWith = core.getInput('replace-with', { trimWhitespace: false });
+  const flags = core.getInput('flags');
+
+  const regex = new RegExp(pattern, flags);
+
+  core.setOutput('replaced', string.replace(regex, replaceWith));
+} catch (error) {
+  core.setFailed(error.message);
+  >>>>>>> no-trim-whitespace
 }
